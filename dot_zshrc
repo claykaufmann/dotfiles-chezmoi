@@ -1,8 +1,8 @@
 # set starship as main prompt
 eval "$(starship init zsh)"
 
-# enable sheldon plugins
-eval "$(sheldon source)"
+# enable vim keybinds (disabled for now)
+# bindkey -v
 
 # Set main editor
 export EDITOR=/opt/homebrew/bin/nvim
@@ -86,3 +86,9 @@ fi
 # <<< conda initialize <<<
 
 export VIRTUAL_ENV_DISABLE_PROMPT=true
+
+# enable zsh syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# enable zsh auto complete
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
