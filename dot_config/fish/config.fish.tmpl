@@ -12,20 +12,30 @@ nvm use node > /dev/null 2>&1
 
 # add to path
 fish_add_path ~/.emacs.d/bin
-fish_add_path /home/clayk/.local/bin/
 
-# aliases
-alias ll="ls -la"
-alias dbx="dropbox"
+# ~~~~ aliases ~~~~
+# ls swap to exa
+alias ls="exa"
+alias ll="exa -l -a --icons"
+alias l.='ll -d .* '
 
-# map vi to nvim, faster than typing vim
-alias vi="nvim"
+# map vim to nvim, faster than typing nvim
 alias vim="nvim"
+
+# git alias
+alias g="git"
 
 # add starship
 starship init fish | source
 
+# Linux differences for path!
+{{- if (eq .chezmoi.os "linux") }}
 fish_add_path /home/clayk/.spicetify
+fish_add_path /home/clayk/.local/bin/
+
+# dropbox alias
+alias dbx="dropbox"
+{{- end }}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
