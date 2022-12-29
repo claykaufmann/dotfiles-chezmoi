@@ -6,9 +6,18 @@ echo "Installing homebrew"
 type brew &> /dev/null || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
 
 echo "Installing packages from homebrew"
+
+# nerd fonts
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+
+# main packages
 brew install exa nvim pyenv zsh-syntax-highlighting zsh-autosuggestions pyenv-virtualenv neofetch git-delta
+
+# emacs 29
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@29 --with-imagemagick --with-native-comp --with-modern-black-gnu-head-icon
+
 {{- else }}
 echo "Installing linux specific packages...(ASSUMING DEBIAN)"
 sudo apt install exa 
