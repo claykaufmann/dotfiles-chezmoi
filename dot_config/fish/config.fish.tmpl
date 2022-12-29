@@ -28,8 +28,8 @@ alias g="git"
 # add starship
 starship init fish | source
 
-# Linux differences for path!
 {{- if (eq .chezmoi.os "linux") }}
+# Linux differences!
 fish_add_path /home/clayk/.spicetify
 fish_add_path /home/clayk/.local/bin/
 
@@ -37,6 +37,7 @@ fish_add_path /home/clayk/.local/bin/
 alias dbx="dropbox"
 {{- end }}
 
+# Need to make this free of OS, maybe just don't manage it
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /home/clayk/miniconda3/bin/conda "shell.fish" "hook" $argv | source
