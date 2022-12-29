@@ -1,0 +1,10 @@
+Host github.com
+	HostName github.com
+	User git
+  IdentityFile ~/.ssh/id_ed25519_github
+
+Host lightsail
+  HostName {{ .lightsail_ip }}
+  User {{ .lightsail_user }}
+  IdentityFile ~/.ssh/LightsailDefaultKey-us-east-2.pem
+
