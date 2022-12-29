@@ -1,0 +1,17 @@
+README.md
+
+# only install linux dotfiles on linux
+{{- if if ne .chezmoi.os "linux" }}
+.config/bspwm
+.config/dbx_start.sh
+.config/walstart.sh
+.config/fish
+.config/gtk-2.0
+.config/gtk-3.0
+.config/mimeapps.list
+.config/picom.conf
+.config/polybar
+.config/rofi
+.config/spicetify
+.config/sxhkd
+{{- end}}
