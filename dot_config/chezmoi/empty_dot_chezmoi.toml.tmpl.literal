@@ -1,4 +1,0 @@
-{{- $lightsail_ip := promptStringOnce . "lightsail_ip" "Lightsail IP" -}}
-
-[data]
-  lightsail_ip = {{ $lightsail_ip }}
