@@ -179,6 +179,7 @@ zsh_indicator = ''
 unknown_indicator = 'mystery shell'
 style = 'cyan bold'
 disabled = false
+format = '\[[on $indicator ]($style)\]'
 
 [spack]
 format = '\[[$symbol$environment]($style)\]'
