@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# starship
+{{- if (eq .chezmoi.os "darwin") }}
+brew install starship
+{{- else }}
+sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+{{- end }}
+
+# other useful packages needed
+{{- if (eq .chezmoi.os "darwin") }}
+brew install exa nvim pyenv zsh-syntax-highlighting zsh-autosuggestions
+{{- else }}
+sudo apt install exa 
+sudo apt-get install nvim
+sudo sh -c "$(curl https://pyenv.run | bash)" -- -y
+{{- end }}
