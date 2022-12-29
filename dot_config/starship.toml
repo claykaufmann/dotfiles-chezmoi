@@ -7,7 +7,25 @@ command_timeout = 800
 # ~~~~~~~ CORE FORMAT ~~~~~~~
 # Inserts a blank line between shell prompts
 add_newline = true
-
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$python\
+$c\
+$conda\
+$php\
+$nodejs\
+$php\
+$cmake\
+$docker_context\
+$shell\
+$cmd_duration\
+$line_break\
+$character"""
 
 # ~~~~~~~ INDIVIDUAL FORMATS ~~~~~~~~
 [aws]
@@ -153,6 +171,14 @@ format = '\[[$symbol($version)]($style)\]'
 
 [scala]
 format = '\[[$symbol($version)]($style)\]'
+
+[shell]
+fish_indicator = ''
+powershell_indicator = '_'
+zsh_indicator = ''
+unknown_indicator = 'mystery shell'
+style = 'cyan bold'
+disabled = false
 
 [spack]
 format = '\[[$symbol$environment]($style)\]'
