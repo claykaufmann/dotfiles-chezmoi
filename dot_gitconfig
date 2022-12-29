@@ -25,6 +25,9 @@
   cm = commit -m
   rv = remote -v
   d = diff
+  p = push
+  pu = pull
+  a = add
 
 [init]
   defaultBranch = main
