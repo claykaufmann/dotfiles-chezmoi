@@ -1,10 +1,18 @@
 call plug#begin('~/.vim/plugged')
-" File tree
+" NERDtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" disabled nerdtree syntax highlight as it causes an error
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" for file icons
 Plug 'ryanoasis/vim-devicons'
+
+" git in the gutter!
 Plug 'airblade/vim-gitgutter'
+
+" handles keeping workspaces or something
 Plug 'rbgrouleff/bclose.vim'
 
 " telescope and dependencies
@@ -38,10 +46,9 @@ call plug#end()
 let mapleader = " "
 
 " Set shell
+" this should be a template in chezmoi eventually, depending on specific shell
+" of OS
 set shell=zsh
-
-" disable comments continuing to the next line by default
-set formatoptions-=ro
 
 " theme
 colorscheme dracula
