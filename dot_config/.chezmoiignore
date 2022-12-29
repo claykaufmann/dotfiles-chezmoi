@@ -1,0 +1,15 @@
+# only install linux dotfiles on linux
+{{- if ne .chezmoi.os "linux" }}
+bspwm
+dbx_start.sh
+walstart.sh
+fish
+gtk-2.0
+gtk-3.0
+mimeapps.list
+picom.conf
+polybar
+rofi
+spicetify
+sxhkd
+{{- end}}
