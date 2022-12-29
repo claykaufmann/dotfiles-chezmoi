@@ -6,13 +6,21 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'rbgrouleff/bclose.vim'
+
+" telescope and dependencies
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
 " start screen
 Plug 'mhinz/vim-startify'
-" snippets
+
+" snippets/lsp
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " comments
 Plug 'tpope/vim-commentary'
-" theme
+
+" theming
 Plug 'dracula/vim'
 " Messes with Neovide
 Plug 'tribela/vim-transparent'
@@ -20,18 +28,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'luochen1990/rainbow'
-" toml syntax highlight
+
+" more syntax highlights
 Plug 'cespare/vim-toml'
 Plug 'gabrielelana/vim-markdown'
-" LaTeX
-Plug 'lervag/vimtex'
 call plug#end()
 
 " Set leader to Space
 let mapleader = " "
 
 " Set shell
-set shell=fish
+set shell=zsh
 
 " disable comments continuing to the next line by default
 set formatoptions-=ro
@@ -53,12 +60,14 @@ map <esc> :noh <CR>
 nmap <leader>ot :NERDTreeToggle<CR>
 nmap <C-q> :qa<CR>
 let NERDTreeMapQuit=''
+
 " nav
 noremap <leader><leader> <C-W>w
 noremap <leader>h <C-W>h
 noremap <leader>j <C-W>j
 noremap <leader>k <C-W>k
 noremap <leader>l <C-W>l
+
 " tab nav
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -71,6 +80,7 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>n :tabnew<CR>
 noremap <leader>x :tabclose<CR>
+
 " Splits
 noremap <leader>wc <C-W>q
 noremap <leader>wv <C-W>v
@@ -126,6 +136,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Clean'     :'✔︎',
                 \ 'Unknown'   :'?',
                 \ }
+
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
@@ -158,9 +169,6 @@ let g:gitgutter_sign_removed = '✖'
 let g:gitgutter_sign_removed_first_line = ''
 let g:gitgutter_sign_modified_removed = ''
 
-" vimtex
-let g:vimtex_view_method = 'zathura'
-
 " Mouse
 set mouse=nicr
 set mouse=a
@@ -168,8 +176,6 @@ set mouse=a
 " More responsive signs on gitgutter
 set updatetime=250
 
-
-" from .vimrc
 " line numbers
 set number relativenumber
 set nocursorline
@@ -188,6 +194,12 @@ set hlsearch
 set incsearch
 
 set showmatch
+
+" telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Gvim
 set guifont=Fira\ Code
