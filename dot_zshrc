@@ -9,9 +9,10 @@ export EDITOR=/opt/homebrew/bin/nvim
 export VISUAL=/opt/homebrew/bin/nvim
 
 # ~~~~~~~ ALIASES ~~~~~~~
-alias ls='ls --color=auto'
-alias ll='ls -la'
-alias l.='ls --color=auto -d .* '
+# use exa instead of default ls
+alias ls='exa'
+alias ll='exa -l -a --icons'
+alias l.='ll -d .* '
 
 # git
 alias gs='git status'
