@@ -14,8 +14,7 @@ alias ls='exa'
 alias ll='exa -l -a --icons'
 alias l.='ll -d .* '
 
-# git
-alias gs='git status'
+# g for git for quicker git commands
 alias g='git'
 
 # kitty ssh fixes
