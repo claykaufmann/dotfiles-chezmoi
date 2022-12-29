@@ -12,7 +12,7 @@ brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 
 # main packages
-brew install exa nvim pyenv zsh-syntax-highlighting zsh-autosuggestions pyenv-virtualenv neofetch git-delta
+brew install exa nvim pyenv zsh-syntax-highlighting pyenv-virtualenv neofetch git-delta
 
 # emacs 29
 brew tap d12frosted/emacs-plus
@@ -39,4 +39,7 @@ brew install starship
 {{- else }}
 sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 {{- end }}
+
+# zsh auto suggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
