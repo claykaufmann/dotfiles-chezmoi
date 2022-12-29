@@ -13,3 +13,6 @@
   {{ end }}
   conda_path = {{ $conda_path | quote }}
 
+[diff]
+  command = "delta"
+  args = ["{{ .Destination }}", "{{ .Target }}"]
