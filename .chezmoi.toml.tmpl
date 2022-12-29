@@ -1,0 +1,15 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $conda_path := promptStringOnce . "conda_path" "Conda path" -}}
+{{- $lightsail_ip := promptStringOnce . "lightsail_ip" "lightsail IP" -}}
+{{- $lightsail_user := promptStringOnce . "lightsail_user" "Lightsail user" -}}
+{{- $lightsail := promptStringOnce . "lightsail" "Use lightsail" -}}
+
+[data]
+  email = {{ $email | quote }}
+  lightsail = {{ $lightsail }}
+  {{ if $lightsail }}
+  lightsail_ip = {{ $lightsail_ip | quote }}
+  lightsail_user = {{ $lightsail_user | quote}}
+  {{ end }}
+  conda_path = {{ $conda_path | quote }}
+
