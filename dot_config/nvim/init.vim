@@ -25,6 +25,9 @@ Plug 'mhinz/vim-startify'
 " snippets/lsp
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " comments
 Plug 'tpope/vim-commentary'
 
