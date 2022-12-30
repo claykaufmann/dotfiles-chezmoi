@@ -109,11 +109,39 @@ noremap <leader>n :tabnew<CR>
 noremap <leader>x :tabclose<CR>
 
 " Splits
+" close split
 noremap <leader>wc <C-W>q
+
+" ~~~~ Opening new splits ~~~~
+" vertical split
 noremap <leader>wv <C-W>v
-noremap <leader>wr <C-W>r
-noremap <leader>wt <C-W>T
+
+" horizontal split
+noremap <leader>ws <C-W>s
+
+" ~~~~ Resizing windows ~~~~
+" ~~ Width ~~
+" shrink current window width
+noremap <leader>w< <C-W><
+
+" increase current window width
+noremap <leader>w> <C-W>>
+
+" ~~ Height ~~
+" shrink window height
+noremap <leader>w- <C-W>-
+
+" increase window height
+noremap <leader>w+ <C-W>+
+
+" equal the size of all windows
 noremap <leader>w= <C-W>=
+
+" ~~~~ focusing new splits ~~~~
+noremap <leader>wh <C-W>h
+noremap <leader>wj <C-W>j
+noremap <leader>wk <C-W>k
+noremap <leader>wl <C-W>l
 
 " error nav
 nmap <leader>e[ <Plug>(coc-diagnostic-prev)
