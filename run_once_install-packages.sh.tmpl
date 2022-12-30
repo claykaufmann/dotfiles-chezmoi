@@ -9,10 +9,12 @@ echo "Installing packages from homebrew"
 
 # nerd fonts
 brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
+brew install --cask font-caskaydia-cove-nerd-font
+brew install --cask font-fira-code-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font
 
 # main packages
-brew install exa nvim pyenv zsh-syntax-highlighting pyenv-virtualenv neofetch git-delta
+brew install exa nvim pyenv pyenv-virtualenv neofetch git-delta git
 
 # emacs 29
 brew tap d12frosted/emacs-plus
@@ -40,6 +42,13 @@ brew install starship
 sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 {{- end }}
 
-# zsh auto suggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# install zsh extras
+# these if statements do not currently work
+if [ ! -d "~/.zsh/zsh-autosuggestions" ] ; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+fi
+
+if [ ! -d "~/.zsh/zsh-syntax-highlighting" ] ; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+fi
 
