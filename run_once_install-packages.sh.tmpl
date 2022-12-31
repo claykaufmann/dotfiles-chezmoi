@@ -14,7 +14,7 @@ brew install --cask font-fira-code-nerd-font
 brew install --cask font-jetbrains-mono-nerd-font
 
 # main packages
-brew install exa nvim pyenv pyenv-virtualenv neofetch git-delta git
+brew install exa nvim pyenv pyenv-virtualenv neofetch git-delta git git-extras
 
 # emacs 29
 brew tap d12frosted/emacs-plus
@@ -43,12 +43,10 @@ sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 {{- end }}
 
 # install zsh extras
-# these if statements do not currently work
-if [ ! -d "~/.zsh/zsh-autosuggestions" ] ; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-fi
+rm -rf ~/.zsh/zsh-autosuggestions
+git force-clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
-if [ ! -d "~/.zsh/zsh-syntax-highlighting" ] ; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-fi
+rm -rf ~/.zsh/zsh-syntax-highlighting
+git force-clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+
 
