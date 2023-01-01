@@ -3,12 +3,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" disabled nerdtree syntax highlight as it causes an error
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+" Lualine status line
 Plug 'nvim-lualine/lualine.nvim'
-" If you want to have icons in your statusline choose one of these
-" Plug 'kyazdani42/nvim-web-devicons'
 
 " for file icons
 Plug 'ryanoasis/vim-devicons'
@@ -37,11 +33,14 @@ Plug 'tpope/vim-commentary'
 
 " theming
 Plug 'dracula/vim'
-" Messes with Neovide
+
+" Transparency
 Plug 'tribela/vim-transparent'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+
+" preview css colors in window
 Plug 'ap/vim-css-color'
+
+" rainbow parenthesis
 Plug 'luochen1990/rainbow'
 
 " more syntax highlights
