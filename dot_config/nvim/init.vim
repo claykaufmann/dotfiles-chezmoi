@@ -1,3 +1,4 @@
+" Plugins
 call plug#begin('~/.vim/plugged')
 " NERDtree
 Plug 'preservim/nerdtree'
