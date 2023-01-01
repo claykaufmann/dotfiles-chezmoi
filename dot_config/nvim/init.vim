@@ -6,6 +6,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " disabled nerdtree syntax highlight as it causes an error
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+" Plug 'kyazdani42/nvim-web-devicons'
+
 " for file icons
 Plug 'ryanoasis/vim-devicons'
 
@@ -35,8 +39,8 @@ Plug 'tpope/vim-commentary'
 Plug 'dracula/vim'
 " Messes with Neovide
 Plug 'tribela/vim-transparent'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'luochen1990/rainbow'
 
@@ -88,13 +92,6 @@ nmap <leader>ot :NERDTreeToggle<CR>
 nmap <C-q> :qa<CR>
 let NERDTreeMapQuit=''
 
-" nav
-noremap <leader><leader> <C-W>w
-noremap <leader>h <C-W>h
-noremap <leader>j <C-W>j
-noremap <leader>k <C-W>k
-noremap <leader>l <C-W>l
-
 " tab nav
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -142,6 +139,7 @@ noremap <leader>wh <C-W>h
 noremap <leader>wj <C-W>j
 noremap <leader>wk <C-W>k
 noremap <leader>wl <C-W>l
+noremap <leader><leader> <C-W>w
 
 " error nav
 nmap <leader>e[ <Plug>(coc-diagnostic-prev)
@@ -151,7 +149,7 @@ nmap <leader>e <Plug>(coc-diagnostic-next)
 noremap <C-S> :tabdo NERDTreeClose<CR> :SSave<CR>
 noremap <C-H> :NERDTreeClose<CR> :Startify<CR>
 
-" coc config (DISABLED AS I TRY LSP)
+" coc config
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
@@ -170,8 +168,8 @@ let g:coc_global_extensions = [
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<tab>\<c-r>=coc#on_enter()\<CR>"
 
-" run prettier on save
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" run prettier on save (disabled, should do this in coc-settings.json)
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " NERDTree
 let g:NERDTreeGitStatusWithFlags = 1
@@ -209,13 +207,6 @@ let g:startify_lists =[
 let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose' ]
 let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
-
-" vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tab_nr_type = 1
-let g:airline#extensions#bufferline#enabled = 0
-let g:airline#extensions#tabline#show_buffers = 0
 
 " vim-gitgutter
 let g:gitgutter_sign_added = '✚'
