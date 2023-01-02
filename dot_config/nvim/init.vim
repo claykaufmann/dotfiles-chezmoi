@@ -12,7 +12,6 @@ Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
 " Plug 'ryanoasis/vim-devicons' Icons without colours
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 
 " git in the gutter!
 Plug 'airblade/vim-gitgutter'
