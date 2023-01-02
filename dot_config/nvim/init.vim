@@ -7,11 +7,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Lualine status line
 Plug 'nvim-lualine/lualine.nvim'
 
-" for file icons
+" for file icons (keeping ryan oasis in case something breaks)
 " Plug 'ryanoasis/vim-devicons'
-
-Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
-" Plug 'ryanoasis/vim-devicons' Icons without colours
+Plug 'nvim-tree/nvim-web-devicons' " (for coloured icons)
 
 " git in the gutter!
 Plug 'airblade/vim-gitgutter'
@@ -169,17 +167,8 @@ let g:coc_global_extensions = [
   \ ]
 
 " coc keybinds for completion
-" this is breaking normal tabs, for some reason
-" inoremap <silent><expr> <TAB>
-"       \ coc#pum#visible() ? coc#pum#next(1) :
-"       \ CheckBackspace() ? "\<Tab>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 nmap <leader>cd <Plug>(coc-definition)
 nmap <leader>cy <Plug>(coc-type-definition)
