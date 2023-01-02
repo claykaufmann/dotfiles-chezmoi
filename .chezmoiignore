@@ -1,2 +1,7 @@
 README.md
 LICENSE
+
+# only install .profile on linux
+{{- if ne .chezmoi.os "linux "}}
+.profile
+{{- end }}
