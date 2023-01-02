@@ -8,13 +8,19 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nvim-lualine/lualine.nvim'
 
 " for file icons
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
+
+Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
+" Plug 'ryanoasis/vim-devicons' Icons without colours
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 
 " git in the gutter!
 Plug 'airblade/vim-gitgutter'
 
 " handles keeping workspaces or something
 Plug 'rbgrouleff/bclose.vim'
+
+Plug 'kdheepak/tabline.nvim'
 
 " telescope and dependencies
 Plug 'nvim-lua/plenary.nvim'
@@ -163,9 +169,22 @@ let g:coc_global_extensions = [
   \ 'coc-cl'
   \ ]
 
-" make return auto-select first item in completion
-inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<tab>\<c-r>=coc#on_enter()\<CR>"
+" coc keybinds for completion
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nmap <leader>cd <Plug>(coc-definition)
+nmap <leader>cy <Plug>(coc-type-definition)
+nmap <leader>ci <Plug>(coc-implementation)
+nmap <leader>cr <Plug>(coc-references)
 
 " NERDTree
 let g:NERDTreeGitStatusWithFlags = 1
@@ -252,4 +271,7 @@ let g:neovide_transparency=0.8
 " Transparency
 let g:neovide_transparency=0.8
 let g:neovide_refresh_rate=144
+
+" for bufferline
+set termguicolors
 
