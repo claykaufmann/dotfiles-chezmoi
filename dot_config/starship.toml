@@ -33,7 +33,7 @@ $cmd_duration\
 
 # the beginning prompt char
 [character]
-success_symbol = "[➜](green)"
+success_symbol = "[➜](fg:#8fee96)"
 error_symbol = "[✖](bold red) "
 
 [directory]
