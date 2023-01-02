@@ -1,8 +1,11 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+
+
 # Necessary edits
 command_timeout = 800
+
 
 # ~~~~ Core format ~~~~
 format = """
@@ -70,7 +73,8 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 [conda]
 symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol$environment ](fg:#769ff0 bg:#212736)]($style)'
+format = '[[ $symbol $environment ](fg:#769ff0 bg:#212736)]($style)'
+ignore_base = false
 
 [golang]
 symbol = "ﳑ"
@@ -90,7 +94,8 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 [python]
 symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+pyenv_version_name = true
+format = '[[ ${symbol} ${pyenv_prefix} (${version} )(\($virtualenv\))](fg:#769ff0 bg:#212736)]($style)'
 
 [rust]
 symbol = ""
