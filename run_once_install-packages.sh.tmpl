@@ -29,6 +29,10 @@ echo "Cannot install git-delta from this script, please manually install"
 echo "Cannot install nerdfonts from this script, please manually install"
 {{- end }}
 
+# mamba (conda alternative) (WONT WORK ON WINDOWS)
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge-$(uname)-$(uname -m).sh
+
 # vim plugged
 echo "Installing vim plug"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
