@@ -163,13 +163,9 @@ let g:coc_global_extensions = [
   \ 'coc-cl'
   \ ]
 
-
 " make return auto-select first item in completion
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<tab>\<c-r>=coc#on_enter()\<CR>"
-
-" run prettier on save (disabled, should do this in coc-settings.json)
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " NERDTree
 let g:NERDTreeGitStatusWithFlags = 1
