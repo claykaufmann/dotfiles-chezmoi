@@ -152,7 +152,8 @@ nmap <leader>e <Plug>(coc-diagnostic-next)
 noremap <C-S> :tabdo NERDTreeClose<CR> :SSave<CR>
 noremap <C-H> :NERDTreeClose<CR> :Startify<CR>
 
-" coc config
+" ~~~~~~ LSP VIA COC ~~~~~~
+" DEFINE NECESSARY EXTENSIONS HERE
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
@@ -161,9 +162,9 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ 'coc-toml',
-  \ 'coc-python',
+  \ 'coc-pyright',
   \ 'coc-texlab',
-  \ 'coc-cl'
+  \ 'coc-cl',
   \ ]
 
 " coc keybinds for completion
