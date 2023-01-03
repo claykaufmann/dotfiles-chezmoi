@@ -1,8 +1,6 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-
-
 # Necessary edits
 command_timeout = 800
 
