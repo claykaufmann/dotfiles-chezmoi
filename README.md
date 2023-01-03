@@ -18,6 +18,10 @@ Run `chezmoi update` to update dotfiles.
 
 I use mainly nvim and vscode for my coding/text editing purposes. I have a [doom emacs](https://github.com/doomemacs/doomemacs) config in here as well as I used to use emacs quite a bit, however due to general performance issues I have swapped back to nvim for now.
 
+## Terminal
+
+For a long time, I have used [kitty](https://sw.kovidgoyal.net/kitty/), as things tend to work out of the box with it (except tmux!). However, recently I have been experimenting with [Alacritty](https://alacritty.org/), and using [tmux](https://github.com/tmux/tmux) for tabs and window splits. As such, I will keep the configs for both of these in this repo for now.
+
 ## Shell
 
 I use mainly [zsh](https://www.zsh.org/), although I also use [fish](https://fishshell.com/) occasionally as well.
