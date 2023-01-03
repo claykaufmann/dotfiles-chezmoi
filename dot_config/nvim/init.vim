@@ -26,6 +26,9 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " start screen
 Plug 'mhinz/vim-startify'
 
+" fugitive for git
+Plug 'tpope/vim-fugitive'
+
 " snippets/lsp
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -42,7 +45,7 @@ Plug 'dracula/vim'
 Plug 'tribela/vim-transparent'
 
 " preview css colors in window
-Plug 'ap/vim-css-color'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " rainbow parenthesis
 Plug 'luochen1990/rainbow'
