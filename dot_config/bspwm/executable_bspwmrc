@@ -7,7 +7,13 @@
 #feh --bg-scale $(find ~/Dropbox/bg-photos -type f | shuf -n 1)
 
 # start pywal
-~/.dotfiles/linux/walstart.sh
+# ~/.dotfiles/linux/walstart.sh
+
+# set background image
+feh --randomize --bg-scale ~/bg-photos-linux/*
+
+# reinit xrdb
+xrdb ~/.Xresources
 
 #Start polybar first
 bash ~/.config/polybar/launch.sh
@@ -29,12 +35,26 @@ done &
 #Fix Mouse curoor on startup 
 xsetroot -cursor_name left_ptr
 
+# set scroll direc
+xinput set-prop 12 325 1
+
 #Set Keyboard Layout
 setxkbmap -layout us
 
-#Monitor Config
-bspc monitor DP-1 -d 1 2 3 4 5
-bspc monitor DP-2 -d 6 7 8 9 10 
+# Monitor Config
+# bpsc monitor eDP-1 1 2 3 4 5 6 7 8 9 10
+bspc monitor eDP-1 -d 1 2 3 4 5
+bspc monitor DP-1-2 -d 6 7 8 9 10
+
+# autorandr auto setup
+
+
+# if [[ $(autorandr --current | grep docked) = docked ]]; then
+#   bspc monitor DP-1-2 -d 1 2 3 4 5
+#   bspc monitor eDP-1 -d 6 7 8 9 10
+# else
+#   bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+# fi
 
 #BSPWM Config
 bspc config border_width        0
@@ -67,8 +87,6 @@ bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
 #bspc rule -a Chromium desktop='^2'
 
 #Auto-Start
-bspc desktop -f ^6
-sleep 0.50
 lxpolkit &
 picom --config "$HOME/.config/bspwm/picom.conf"
 bspc desktop -f ^1

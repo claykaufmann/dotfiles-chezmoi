@@ -25,12 +25,24 @@ super + shift + p
 	flameshot gui -p ~/screenshots/
 
 # open emacsclient
-super + z
-	emacsclient -c --alternate-editor="" -a "emacs --daemon"
+# super + z
+# 	emacsclient -c --alternate-editor="" -a "emacs --daemon"
 
 # open 1pass
 super + p
 	1password
+
+# vscode
+super + c
+  code
+
+# thunar
+super + f
+  thunar
+
+# open slack
+super + k
+  slack
 
 # change pywal
 super + y
@@ -39,6 +51,10 @@ super + y
 # open spotify
 super + m
 	spotify
+
+# open obsidian
+super + o
+  obsidian
 
 #
 # bspwm hotkeys
