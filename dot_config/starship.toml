@@ -24,6 +24,7 @@ $c\
 $conda\
 [](fg:#212736 bg:#1d2230)\
 $docker_context\
+$aws\
 $shell\
 $cmd_duration\
 [ ](fg:#1d2230)\
@@ -40,17 +41,6 @@ format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 read_only = " "
-
-# this is dumb
-# [directory.substitutions]
-# "Documents" = " "
-# "Downloads" = " "
-# "Music" = " "
-# "Pictures" = " "
-
-# disable aws
-[aws]
-disabled = true
 
 # ~~~~ Git prompts ~~~~
 [git_branch]
@@ -114,6 +104,11 @@ format = '[[ $indicator ](fg:#769ff0 bg:#1d2230)]($style)'
 symbol = " "
 style = "bg:#1d2230"
 format = '[[ $symbol$context ](fg:#769ff0 bg:#1d2230)]($style)'
+
+[aws]
+disabled = false
+symbol = ""
+format = '[[ $symbol $profile (\($region\) )](fg:#769ff0 bg:#1d2230)]($style)'
 
 [time]
 disabled = true

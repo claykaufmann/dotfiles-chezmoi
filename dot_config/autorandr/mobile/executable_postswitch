@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+bspc desktop 6 --to-monitor eDP-1
+bspc desktop 7 --to-monitor eDP-1
+bspc desktop 8 --to-monitor eDP-1
+bspc desktop 9 --to-monitor eDP-1
+bspc desktop 10 --to-monitor eDP-1
+

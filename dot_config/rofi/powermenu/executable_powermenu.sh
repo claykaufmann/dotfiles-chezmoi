@@ -15,13 +15,15 @@
 # full_circle     full_square     full_rounded     full_alt
 # row_circle      row_square      row_rounded      row_alt
 
-theme="drop_square"
-dir="$HOME/.config/rofi/powermenu"
+dir="$HOME/.config/rofi/"
 
+theme="$dir/powermenu/drop_square.rasi"
+confirm="$dir/applets/styles/confirm.rasi"
+rofi_command="rofi -theme $dir/$theme"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/$theme"
+rofi_command="rofi -theme $theme"
 
 # Options
 shutdown=""
@@ -36,12 +38,12 @@ confirm_exit() {
 		-i\
 		-no-fixed-num-lines\
 		-p "Are You Sure? : "\
-		-theme $dir/confirm.rasi
+		-theme $confirm
 }
 
 # Message
 msg() {
-	rofi -theme "$dir/message.rasi" -e "Available Options  -  yes / y / no / n"
+	rofi -theme "$confirm" -e "Available Options  -  yes / y / no / n"
 }
 
 # Variable passed to rofi
@@ -75,19 +77,5 @@ case $chosen in
         fi
         ;;
     $logout)
-		ans=$(confirm_exit &)
-		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
-				i3-msg exit
-			fi
-		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-			exit 0
-        else
-			msg
-        fi
-        ;;
+      bspc quit
 esac
