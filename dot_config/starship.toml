@@ -110,6 +110,9 @@ disabled = false
 symbol = ""
 format = '[[ $symbol $profile (\($region\) )](fg:#769ff0 bg:#1d2230)]($style)'
 
+[env_var.AWS_ENV]
+default = ''
+
 [time]
 disabled = true
 time_format = "%R" # Hour:Minute Format

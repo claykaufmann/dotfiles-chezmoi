@@ -16,7 +16,7 @@ super + Escape
 
 # My program Hotkeys
 super + b
-	firefox
+	google-chrome
 
 super + p 
 	flameshot full -p ~/screenshots/
@@ -166,8 +166,8 @@ super + {Left,Down,Up,Right}
 	
 # volume control
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -5%
+	pactl set-sink-volume @DEFAULT_SINK@ -1%
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +5%
+	pactl set-sink-volume @DEFAULT_SINK@ +1%
 XF86AudioMute
         pactl set-sink-mute @DEFAULT_SINK@ toggle
