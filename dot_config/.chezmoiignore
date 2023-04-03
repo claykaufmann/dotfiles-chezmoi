@@ -3,6 +3,7 @@
 bspwm
 dbx_start.sh
 walstart.sh
+autorandr
 picom.conf
 polybar
 rofi
