@@ -25,8 +25,8 @@ super + shift + p
 	flameshot gui -p ~/screenshots/
 
 # open emacsclient
-# super + z
-# 	emacsclient -c --alternate-editor="" -a "emacs --daemon"
+super + z
+	emacsclient -c --alternate-editor="" -a "emacs --daemon"
 
 # open 1pass
 super + p
