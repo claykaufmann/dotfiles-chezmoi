@@ -50,9 +50,12 @@ setxkbmap -layout us
 # bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
 
 # for work docked option
-bspwm wm -O DP-1-2 eDP-1
-bspc monitor DP-1-2 -d 1 2 3 4 5
-bspc monitor eDP-1 -d 6 7 8 9 10
+bspwm wm -O DP-1-1 DP-1-2 eDP-1
+bspc monitor DP-1-2 -d 1 2 3
+bspc monitor DP-1-1 -d 4 5 6 7
+bspc monitor eDP-1 -d 8 9 10
+
+bspc monitor --swap DP-1-1 DP-1-2
 
 # home docked
 # for home
