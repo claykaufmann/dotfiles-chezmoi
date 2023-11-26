@@ -1,6 +1,6 @@
 # dotfiles
 
-These are my dotfiles! I recently swapped over to [chezmoi](https://www.chezmoi.io/), a tool for managing dotfiles. This has changed how I handle dotfiles, so this repo is different from my [previous dotfiles repo](https://github.com/claykaufmann/dotfiles-pre-chezmoi).
+This is my old chezmoi based dotfiles system. I have swapped back to `GNU Stow`, as I find having to edit dotfiles with the chezmoi command to be quite annoying.
 
 # Installation
 
